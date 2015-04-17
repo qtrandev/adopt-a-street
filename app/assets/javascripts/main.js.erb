@@ -17,6 +17,22 @@ $(function() {
     zoomControl: true
   };
   var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+  // Add Fort Lauderdale roads Fusion Table
+  var layer = new google.maps.FusionTablesLayer({
+    map: map,
+    heatmap: { enabled: false },
+    query: {
+      select: "col0",
+      from: "1Sw0QIVHmh2Kg1NEZupt7uiQ7Pbxl5PU5uKHUiEc5",
+      where: ""
+    },
+    options: {
+      styleId: 2,
+      templateId: 2
+    }
+  });
+
   var size = new google.maps.Size(27.0, 37.0);
   var origin = new google.maps.Point(0, 0);
   var anchor = new google.maps.Point(13.0, 18.0);
